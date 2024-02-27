@@ -1,8 +1,11 @@
+import { Card } from "./Card";
+
 export function HomePage() {
     
     return(
-        <div>
-            
-        </div>
+            <div className="homePage">
+                <Card />
+            </div>
+        
     )
 }
