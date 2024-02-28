@@ -1,7 +1,7 @@
 export function ButtonPrefer() {
   return (
-    <div className="buttonPrefer">
-      <button className="addToPrefer">Add to prefer</button>
-    </div>
+    
+      <button className="addToPrefer"><h2>Add to prefer</h2></button>
+    
   );
 }

@@ -1,0 +1,97 @@
+@import url(main.scss);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: linear-gradient(rgba(49, 48, 48, 0.99), #000000);
+}
+
+.homePage {
+    background: var(--primaryColor);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boxCard {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 40px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 20px 20px 20px  black ;
+    border-radius: 30px;
+    display: flex;
+    height: 500px;
+    background: var(--secondaryColor);
+    transition: transform 0.3s ease ;
+
+}
+.boxCard:hover {
+    transform: scale(1.1);
+}
+.pageGame {
+    background: var(--primaryColor);
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.imageGame {
+    max-width: 100%;
+    opacity: 0.08;
+    position: absolute;
+    right: 10px;
+    overflow: hidden;
+}
+.schedaGioco {
+    z-index: 1;
+
+}
+h1 {
+    font-size: var(--fontSizeTitle);
+}
+p {
+    font-size: var(--fontSizeText);
+}
+h2 {
+    font-size: 30px;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left:150px ;
+    padding-right: 150px;
+}
+.addToPrefer, .addToCart {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondaryColor);
+    transition: transform 0.3s ease ;
+    border-radius: 20px;
+}

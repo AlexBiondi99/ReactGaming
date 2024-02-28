@@ -1,8 +1,7 @@
 
 import { Route, Routes } from "react-router-dom";
 import { PageGame } from "./PageGame";
-import { HomePage } from "./homePage";
-
+import { HomePage } from "./HomePage";
 export function App() {
     return (
         <div>
