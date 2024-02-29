@@ -40,6 +40,21 @@ body{
 .boxCard:hover {
     transform: scale(1.1);
 }
+.linkContainer {
+    position: relative;
+}
+.sconto {
+    background: rgb(255, 140, 0);
+    position: absolute; 
+    bottom:0; 
+    left: 0; 
+    padding: 10px;
+    z-index: 1;
+    border-top-right-radius: 50px;
+    text-decoration: none;
+    color: #000000;
+    box-shadow: 10px -10px 8px black;
+}
 .pageGame {
     background: var(--primaryColor);
     height: 100vh;
@@ -52,10 +67,12 @@ body{
     gap: 50px;
 }
 .imageGame {
-    max-width: 100%;
-    opacity: 0.08;
+    width: 100%;
     position: absolute;
-    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    opacity: 0.1;
     overflow: hidden;
 }
 .schedaGioco {
@@ -64,29 +81,40 @@ body{
 }
 h1 {
     font-size: var(--fontSizeTitle);
+    z-index: 1;
 }
 p {
     font-size: var(--fontSizeText);
+    z-index: 1;
 }
 h2 {
     font-size: 30px;
+    z-index: 1;
 }
 .buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 30%;
+    z-index: 1;
 }
 .description {
+    margin-top: 40px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-left:150px ;
     padding-right: 150px;
+    background: var(--primaryColor);
+    padding: 50px;
+    z-index: 1;
+    border-radius: 50px;
+    box-shadow: 20px 20px 20px  black;
 }
 .addToPrefer, .addToCart {
-    width: 200px;
+    width: 300px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -94,4 +122,14 @@ h2 {
     background: var(--secondaryColor);
     transition: transform 0.3s ease ;
     border-radius: 20px;
+    box-shadow: 20px 20px 20px  black;
+    z-index: 1;
+    transition: transform 0.3s ease ;
+    border: none;
+}
+.addToPrefer:hover {
+    transform: scale(1.1);
+}
+ .addToCart:hover {
+        transform: scale(1.1);
 }
