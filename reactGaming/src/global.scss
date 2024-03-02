@@ -10,9 +10,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: linear-gradient(rgba(49, 48, 48, 0.99), #000000);
 }
-
+.page{
+    background: var(--primaryColor);
+    font-size: 40px; // provvisorio
+}
 .homePage {
     background: var(--primaryColor);
     height: 100vh;
@@ -132,4 +134,56 @@ h2 {
 }
  .addToCart:hover {
         transform: scale(1.1);
+}
+.loginPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    gap: 50px;
+}
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    background: var(--secondaryColor);
+    height: 50%;
+    width: 35%;
+    border-radius: 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    box-shadow: 20px 20px 20px  black;
+}
+input {
+    height: 50px;
+    width: 80%;
+    color: white;
+    background-color: #000000;
+    font-size: 30px;
+    border-radius: 30px;
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.formButton {
+    color: white;
+    font-size: 30px;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryColor);
+    transition: transform 0.3s ease ;
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px  black;
+    z-index: 1;
+    transition: transform 0.3s ease ;
+    border: none;
+}
+.formButton:hover{
+    transform: scale(1.1);
 }

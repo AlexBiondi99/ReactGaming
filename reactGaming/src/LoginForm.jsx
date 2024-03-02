@@ -14,12 +14,13 @@ export function LoginForm() {
         event.preventDefault()
     }
     return(
-        <>
-            <form onSubmit={handleButtonPress}>
-                <input type="email" value={email} onChange={handleEmailValue}/>
-                <input type="password" value={password} onChange={handlePasswordValue}/>
-                <button>Accedi</button>
+        <div className="loginPage">
+            <h1>Log In:</h1>
+            <form className="loginForm" onSubmit={handleButtonPress}>
+                <input placeholder="Email:" type="email" value={email} onChange={handleEmailValue}/>
+                <input placeholder="Password:" type="password" value={password} onChange={handlePasswordValue}/>
+                <button className="formButton">Accedi</button>
             </form>
-        </>
+        </div>
     )
 }
