@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+#root {
+    background: var(--primaryColor);
+}
 body{
     width: 100vw;
     height: 100vh;
@@ -59,18 +62,21 @@ body{
 }
 .pageGame {
     background: var(--primaryColor);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    padding-top: 40%;
+
 }
 .imageGame {
     width: 100%;
     position: absolute;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -128,6 +134,8 @@ h2 {
     z-index: 1;
     transition: transform 0.3s ease ;
     border: none;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .addToPrefer:hover {
     transform: scale(1.1);
@@ -186,4 +194,44 @@ input {
 }
 .formButton:hover{
     transform: scale(1.1);
+}
+.navbar {
+    display: flex;
+    height: 50px;
+    background: var(--secondaryColor);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    justify-content: end;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    z-index: 100;
+}
+.loginButton {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryColor);
+    transition: transform 0.3s ease ;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 5px 5px black;
+}
+.loginButton:hover {
+    transform: scale(1.1);
+}
+.linkLogin {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
