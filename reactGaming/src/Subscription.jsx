@@ -37,7 +37,7 @@ export function Subscription() {
     }
     return(
         <div className="loginPage">
-            <form className="loginForm"  onSubmit={handleSubmit}>
+            <form className="subscriptionForm"  onSubmit={handleSubmit}>
                 <input type="text" placeholder="Name:" value={name} onChange={handleNameChange}/>
                 <input type="text" placeholder="Last Name:"value={lastName} onChange={handleLastNameChange}/>
                 <input type="email" placeholder="Email:"value={email} onChange={handleEmailChange}/>

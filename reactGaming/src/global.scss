@@ -165,6 +165,18 @@ h2 {
     gap: 50px;
     box-shadow: 20px 20px 20px  black;
 }
+.subscriptionForm {
+    display: flex;
+    flex-direction: column;
+    background: var(--secondaryColor);
+    height: 50%;
+    width: 35%;
+    border-radius: 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 20px 20px 20px  black;
+}
 input {
     height: 50px;
     width: 80%;
@@ -234,4 +246,14 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.linkIscrizione {
+    font-size: 30px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: transform 0.3s ease ;
+}
+.linkIscrizione:hover {
+    transform: scale(1.1);
 }

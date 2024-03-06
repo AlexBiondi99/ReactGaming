@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export function LoginForm() {
     const[email, setEmail] = useState('')
@@ -20,7 +21,9 @@ export function LoginForm() {
                 <input placeholder="Email:" type="email" value={email} onChange={handleEmailValue}/>
                 <input placeholder="Password:" type="password" value={password} onChange={handlePasswordValue}/>
                 <button className="formButton">Accedi</button>
+                <Link className="linkIscrizione" to='/subscribe'>Non hai un account? inscriviti ora</Link>
             </form>
+            
         </div>
     )
 }

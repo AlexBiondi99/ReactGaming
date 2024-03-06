@@ -4,7 +4,8 @@ import { PageGame } from "./PageGame";
 import { HomePage } from "./HomePage";
 import { Navbar } from "./Navbar";
 import { LoginForm } from "./LoginForm";
-
+import { Subscription } from "./Subscription"
+ 
 
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
                 <Route path="/"  element={<HomePage />}/>
                 <Route path="pageGame" element={<PageGame />} />
                 <Route path="login" element={<LoginForm />} />
+                <Route path="subscribe" element={<Subscription />} />
             </Routes> 
         </div>
         
