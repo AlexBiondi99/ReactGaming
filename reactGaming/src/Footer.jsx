@@ -21,7 +21,7 @@ export function Footer() {
       <div className="subFooter">
         <Dropdown />
         <p className="subFooterParagraph">
-          ©2024 Roblox Corporation. Roblox, il logo Roblox e Powering
+          ©2024 Easy game. il logo Easy game 
           Imagination sono alcuni dei nostri marchi registrati<br/> e marchi di fatto
           negli Stati Uniti e in altri Paesi.
         </p>
