@@ -17,7 +17,7 @@ export function App() {
                 <Route path="/"  element={<HomePage />}/>
                 <Route path="pageGame" element={<CallFake />} />
                 <Route path="login" element={<LoginForm />} />
-                <Route path="subscribe" element={<Subscription />} />
+                <Route path="signup" element={<Subscription />} />
                 <Route path="cart" element={<Cart />} />
             </Routes> 
         </div>

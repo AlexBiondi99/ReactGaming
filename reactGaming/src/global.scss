@@ -1,4 +1,4 @@
-@import url(main.scss);
+ @import url(main.scss);
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@
 }
 body{
     width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +27,6 @@ body{
     justify-content: center;
 }
 .boxCard {
-    color: white;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -34,8 +34,8 @@ body{
     padding-bottom: 40px;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 20px 20px 20px  black ;
-    border-radius: 30px;
+    // box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5) ;
+    border-radius: 20px;
     display: flex;
     height: 500px;
     background: var(--secondaryColor);
@@ -62,7 +62,7 @@ body{
 }
 .pageGame {
     background: var(--primaryColor);
-    height: 100vh;
+    height: 100%;
     width: 100%;
     color: white;
     display: flex;
@@ -70,7 +70,8 @@ body{
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding-top: 10%;
+    padding-top: 40%;
+
 }
 .imageGame {
     width: 100%;
@@ -79,7 +80,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: start;
-    opacity: 0.1;
+    opacity: 0.5;
     overflow: hidden;
 }
 .schedaGioco {
@@ -146,54 +147,41 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     color: white;
     gap: 50px;
 }
-.stylePart1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-}
-.ImageBoxLogin{
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-}
-.ImageLogin{
-    width: 100%;
-    object-fit:contain;
-    height: 100%;
-    // overflow: hidden;
-}
 .loginForm {
     display: flex;
     flex-direction: column;
+    background: var(--secondaryColor);
     height: 50%;
-    width: 50%;
+    width: 35%;
+    border-radius: 80px;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    box-shadow: 20px 20px 20px  black;
 }
 .subscriptionForm {
     display: flex;
     flex-direction: column;
+    background: var(--secondaryColor);
     height: 50%;
     width: 35%;
     border-radius: 80px;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    box-shadow: 20px 20px 20px  black;
 }
 input {
     height: 50px;
+    width: 80%;
     color: white;
-    background-color: #454545;
+    background-color: #000000;
     font-size: 30px;
     border-radius: 30px;
     display: flex;
@@ -221,14 +209,14 @@ input {
 }
 .navbar {
     display: flex;
-    height: 80px;
+    height: 100px;
     background: var(--secondaryColor);
     width: 100%;
     position: fixed;
     top: 0;
     justify-content: end;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     align-items: center;
     z-index: 100;
 }
@@ -262,60 +250,188 @@ input {
 .linkIscrizione {
     font-size: 30px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
     transition: transform 0.3s ease ;
 }
 .linkIscrizione:hover {
     transform: scale(1.1);
 }
-.footer {
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-    position: relative;
-    top: 0;
-    justify-content: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    z-index: 100;
-    align-items: center;
-    background: var(--secondaryColor);
-    color: black;
+.cls-1NoNav {
+    fill: #fff;
 }
+.cls-1 {
+    fill: #fff;
+  }
 
-.footerContent{
-    color: white;
+  .cls-1, .cls-2 {
+    stroke-width: 0px;
+  }
+
+  .cls-2 {
+    fill: red;
+  }
+  .logoNavbar {
+    width: 300px;
+  }
+  .boxLogo {
+    flex: 1;
     display: flex;
-    flex-direction: row;
-    list-style: none;
+    align-items: center;
+    height: 100%;
+  }
+  .utilityBox {
+    flex: 1;
+    display: flex;
     height: 100%;
     align-items: center;
-    font-size: medium;
-    gap: 10px;
-
+    justify-content: end;
+    gap: 20px;
+  }
+  .cls-3 {
+    fill: #fff;
+    stroke-width: 0px;
 }
-a{
-    color: white;
-    text-decoration: none;
+.svgCart {
+    width: 35px;
+    transition: transform 0.3s ease ;
 }
-a:hover{
-    text-decoration:underline;
+.svgCart:hover {
+    transform: scale(1.2);
 }
-.hrFooter{
-    width: 50%;
-    
+.cartPage {
+    width: 100vw;
+    height: 100vh;
+    background: var(--primaryColor);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
 }
-
-.subFooter{
-    flex-direction: row;
+.boxItemCart {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    background: var(--secondaryColor);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 20px 20px 20px black;
+}
+.infoItemCart {
     display: flex;
     align-items: center;
-    gap: 30px;
     justify-content: center;
+    gap: 30px;
+    height: 100%;
+    margin-left: 30px;
+    
 }
-
-.subFooterParagraph{
-    font-size: small
+.title {
+    color: #000000;
+    z-index: 999;
+    
 }
-
+.titleGameCart {
+    color: var(--primaryColor);
+    font-size: 30px;
+    font-weight: bold;
+}
+.priceCart {
+    color: var(--primaryColor);
+    font-size: 30px;
+    font-weight: bold;
+}
+.removeToCart {
+    background: var(--primaryColor);
+    color: white;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px black;
+    transition: transform 0.3s ease ;
+}
+.removeToCart:hover {
+    transform: scale(1.1);
+}
+.totalPrice {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: var(--secondaryColor);
+    color:var(--primaryColor);
+    font-weight: bold;
+    justify-content: space-around;
+    border-radius: 30px;
+    box-shadow: 20px 20px 20px black;
+    width: 100%;
+}
+.ceckoutButton {
+    background: var(--primaryColor);
+    color: white;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px black;
+    transition: transform 0.3s ease ;
+}
+.ceckoutButton:hover {
+    transform: scale(1.1);
+}
+.quantity {
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+.quantityBox {
+    display: flex;
+    width: 50px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background: var(--primaryColor);
+    color: #fff;
+    font-size: 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    pointer-events: none;
+}
+.inc {
+    width: 20px;
+    height: 26px;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    background: var(--primaryColor);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease ;
+}
+.dec {
+    width: 20px;
+    height: 26px;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    background: var(--primaryColor);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+    transition: transform 0.3s ease ;
+}
+.inc:hover {
+    transform: scale(1.3);
+}
+.dec:hover {
+    transform: scale(1.3);
+}
+.imgCard {
+    width: 100%;
+}
