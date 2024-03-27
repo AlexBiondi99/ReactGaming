@@ -147,41 +147,59 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     width: 100vw;
     color: white;
     gap: 50px;
 }
+
+.stylePart1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.ImageBoxLogin{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ImageLogin{
+    width: 100%;
+    object-fit:contain;
+    height: 100%;
+    // overflow: hidden;
+}
+
 .loginForm {
     display: flex;
     flex-direction: column;
-    background: var(--secondaryColor);
     height: 50%;
-    width: 35%;
-    border-radius: 80px;
+    width: 50%;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    box-shadow: 20px 20px 20px  black;
 }
+
 .subscriptionForm {
     display: flex;
     flex-direction: column;
-    background: var(--secondaryColor);
     height: 50%;
     width: 35%;
     border-radius: 80px;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    box-shadow: 20px 20px 20px  black;
 }
 input {
     height: 50px;
-    width: 80%;
     color: white;
-    background-color: #000000;
+    background-color: #454545;
     font-size: 30px;
     border-radius: 30px;
     display: flex;
