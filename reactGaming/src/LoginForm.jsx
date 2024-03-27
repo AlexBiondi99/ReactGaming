@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Link} from "react-router-dom"
 import { ImageLogin } from "./ImageLogin"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export function LoginForm() {
     const[email, setEmail] = useState('');
@@ -42,9 +42,9 @@ export function LoginForm() {
         } catch (error) {
             setError('Errore durante il login')
             console.error('Errore durante il login:', error);
-            toast.error('Wrong password or email',{
-                position: toast.position.top_center
-            });
+            // toast.error('Wrong password or email',{
+            //     position: toast.position.top_center
+            // });
         }
     }
     return(
@@ -61,7 +61,7 @@ export function LoginForm() {
             <div className="ImageBoxLogin">
                 <ImageLogin/>
             </div>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     )
 }
