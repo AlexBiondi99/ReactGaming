@@ -57,11 +57,14 @@ app.post('/api/login', async (req,res) => {
         const result = await pool.query(query, [email, password]);
 
         if (result.rows.length === 1) {
-            res.status(200).json({ message: 'Login successful 2' });
-            console.log(res.message )
+            res.body = 'Login successful'
+            res.status(200).json({ message: 'Login successful ' });
+            console.log(res.body )
         } else {
-            res.status(401).json({ message: 'Invalid email or password' });
-            console.log(res.message )
+            res.body = 'Invalid email or password'
+            res.status(400).json({ message: 'Invalid email or password' });
+            console.log(res.body );
+            throw new Error('errore durante il login')
         }
     } catch (error) {
         console.error('Errore durante il login:', error);
