@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { ImageLogin } from "./ImageLogin"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Subscription() {
     
@@ -38,6 +40,15 @@ export function Subscription() {
     }
 
     function handleRegister(){
+        if (!name || !surname || !email || !password ) {
+             toast.error('Compila tutti i moduli',{
+                position : 'top-center',
+                pauseOnHover: false,
+                closeOnClick: true,
+                autoClose:2000,
+            });
+            return;
+        }
         fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: {
@@ -68,16 +79,17 @@ export function Subscription() {
             <div className="stylePart1">
                 <h1>Registrati:</h1>
                 <form className="subscriptionForm"  onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Name:" value={name} onChange={handleNameChange}/>
-                    <input type="text" placeholder="Surname:" value={surname} onChange={handleLastNameChange}/>
-                    <input type="email" placeholder="Email:"value={email} onChange={handleEmailChange}/>
-                    <input type="password" placeholder="Password:" value={password} onChange={handlePasswordChange}/>
+                    <input type="text" placeholder="Name:" value={name} onChange={handleNameChange} />
+                    <input type="text" placeholder="Surname:" value={surname} onChange={handleLastNameChange} />
+                    <input type="email" placeholder="Email:"value={email} onChange={handleEmailChange} />
+                    <input type="password" placeholder="Password:" value={password} onChange={handlePasswordChange} />
                     <button className="formButton" onClick={handleRegister}>Register</button>
                 </form>  
             </div>
             <div className="ImageBoxLogin">
                 <ImageLogin/>
             </div>
+            <ToastContainer theme="dark" className={'ToastAlert'}/>
         </div>
     )
 }

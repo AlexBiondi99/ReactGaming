@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Link} from "react-router-dom"
 import { ImageLogin } from "./ImageLogin"
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function LoginForm() {
     const[email, setEmail] = useState('');
@@ -28,23 +28,28 @@ export function LoginForm() {
                 body : JSON.stringify({email,password}),
             });
                 if(response.ok){
-                    console.log('login successful');
+                    const data = await response.json();
+                    console.log(data.message)
                     localStorage.setItem('isLoggedIn','true');
                     window.location.href = '/'                    
                 } else {
-                    let errorMessage = 'Errore nel Login'
+                    let errorMessage = 'Errore nel Login';
                     if(response.headers.get('content-type')?.includes('application/json')){
                         const data = await response.json();
                         errorMessage = data.message || errorMessage;
                     }
                     setError(errorMessage);
+                    throw new Error(error)
                 }
         } catch (error) {
             setError('Errore durante il login')
-            console.error('Errore durante il login:', error);
-            // toast.error('Wrong password or email',{
-            //     position: toast.position.top_center
-            // });
+            console.error(error);
+            toast.error('Wrong password or email',{
+                position: 'top-center',
+                pauseOnHover: false,
+                closeOnClick: true,
+                autoClose:2000,
+            });
         }
     }
     return(
@@ -61,7 +66,7 @@ export function LoginForm() {
             <div className="ImageBoxLogin">
                 <ImageLogin/>
             </div>
-            {/* <ToastContainer /> */}
+            <ToastContainer className={'ToastAlert'} theme="dark"/>
         </div>
     )
 }
