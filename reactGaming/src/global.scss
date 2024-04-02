@@ -9,7 +9,6 @@
 }
 body{
     width: 100vw;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,10 +147,9 @@ h2 {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     color: white;
-    gap: 50px;
 }
 
 .stylePart1{
@@ -159,20 +157,20 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    max-height: 100%;
     width: 50%;
 }
-
 .ImageBoxLogin{
     width: 50%;
-    height: 100%;
+
+    max-height: 100%;
     overflow: hidden;
 }
 
 .ImageLogin{
     width: 100%;
-    object-fit:contain;
-    height: 100%;
+    object-fit:cover;
+    max-height: 100%;
     // overflow: hidden;
 }
 
@@ -227,7 +225,7 @@ input {
 }
 .navbar {
     display: flex;
-    height: 100px;
+    height: 80px;
     background: var(--secondaryColor);
     width: 100%;
     position: fixed;
@@ -273,7 +271,7 @@ input {
 .linkIscrizione {
     font-size: 30px;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
     transition: transform 0.3s ease ;
 }
@@ -457,4 +455,49 @@ input {
 }
 .imgCard {
     width: 100%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 150px;
+    position: relative;
+    top: 0;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 100;
+    align-items: center;
+    background: var(--secondaryColor);
+    color: black;
+    
+}
+
+.footerContent{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    font-size: medium;
+    gap: 10px;
+
+}
+
+.hrFooter{
+    width: 50%;
+    
+}
+
+.subFooter{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+
+.subFooterParagraph{
+    font-size: small
 }

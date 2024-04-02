@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 
+function handleLoginButton(){
+    localStorage.setItem('isLoggedIn','false');
+}
+
 export function Navbar() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
     return(
         <div className="navbar">
             <div className="boxLogo">
+                <Link to='/'>
                 <svg className="logoNavbar" id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1216.59 143.3">
                     <g>
                         <path className="cls-1" d="M.65,140.25V.86h103.36v23.58H28.79v30.9h69.98v23.49H28.79v37.94h77.87v23.49H.65Z"/>
@@ -19,6 +25,7 @@ export function Navbar() {
                     <path className="cls-1" d="M611.23,74.72v1.8c0,4.12,3.34,7.46,7.46,7.46h28.58v-14.61c0-1.16-.94-2.1-2.1-2.1h-26.48c-4.12,0-7.46,3.34-7.46,7.46Z"/>
                     <circle className="cls-2" cx="740.02" cy="101.94" r="15.83"/>
                 </svg>
+                </Link>
             </div>
             <div className="utilityBox">
                 <div className="boxCart">
@@ -31,9 +38,15 @@ export function Navbar() {
                     </Link>
                 
                 </div>
+                {!isLoggedIn ?
                 <button className="loginButton">
                     <Link  className="linkLogin" to='/login'>Login</Link>
                 </button>  
+                :
+                <button className="loginButton" onClick={handleLoginButton}>
+                    <Link className="linkLogin" to='/login'>Logout</Link>
+                </button>
+                }
             </div>
         </div>
     )

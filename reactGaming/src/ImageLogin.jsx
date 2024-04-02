@@ -8,11 +8,11 @@ export function ImageLogin(){
         const [image,setImage] = useState('');
 
         useEffect(() =>{
-            const background = [laracroft,GOW,thewitcher,Baldurgate3];
+            const background = [thewitcher,Baldurgate3];
             const randomIndex = Math.floor(Math.random() * background.length);
             const randomBackground = background[randomIndex];
             setImage(randomBackground);
-        })
+        },[])
    return(
         <>
         <img src={image} className="ImageLogin" alt="Imagine"/>
