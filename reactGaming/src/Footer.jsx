@@ -5,7 +5,8 @@ export function Footer() {
     <div className="footer">
       <ul className="footerContent">
         <li>
-            <a href="#">Su di noi</a></li>
+          <a href="#">Su di noi</a>
+        </li>
         <li>Lavori</li>
         <li>Blog</li>
         <li>Genitori</li>
@@ -21,9 +22,9 @@ export function Footer() {
       <div className="subFooter">
         <Dropdown />
         <p className="subFooterParagraph">
-          ©2024 Easy game. il logo Easy game 
-          Imagination sono alcuni dei nostri marchi registrati<br/> e marchi di fatto
-          negli Stati Uniti e in altri Paesi.
+          ©2024 Easy game. il logo Easy game Imagination sono alcuni dei nostri
+          marchi registrati
+          <br /> e marchi di fatto negli Stati Uniti e in altri Paesi.
         </p>
       </div>
     </div>
