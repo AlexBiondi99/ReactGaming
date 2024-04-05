@@ -8,7 +8,7 @@ export function Cart() {
   useEffect(() => {
     let total = 0;
     cartItems.forEach((element) => {
-      total += element.price * element.quantity;
+      total += element.prezzo * element.quantity;
     });
     setTotalPrice(total);
   }, [cartItems]);
@@ -98,10 +98,10 @@ export function Cart() {
       </Link>
       {cartItems.map((item) => (
         <div className="boxItemCart" key={item.id}>
-          <img className="imageCartgame" src={item.image} alt="" />
+          <img className="imageCartgame" src={item.src_copertina} alt="" />
           <div className="infoItemCart">
-            <p className="titleGameCart">{item.title}</p>
-            <p className="priceCart">{`${item.price} €`}</p>
+            <p className="titleGameCart">{item.titolo}</p>
+            <p className="priceCart">{`${item.prezzo} €`}</p>
             <div className="quantity">
               <button className="dec" onClick={() => decreaseQuantity(item.id)}>
                 -
