@@ -31,4 +31,4 @@ function PageGameWrapper() {
 }
 
 
-function APIDataComponent() {
+function APIDataComponent() {}

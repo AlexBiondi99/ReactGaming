@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navbar } from "./Navbar";
 import { Card } from "./Card";
 import { Link } from 'react-router-dom';
+import { Footer } from './Footer';
 
 export function HomePage() {
     const [games, setGames] = useState([]);
@@ -22,22 +23,24 @@ export function HomePage() {
         } catch (error) {
             console.error(error);
         }
-        console.log(data)
     };
 
     return (
-        <div className="homePage">
-    <Navbar />
-    <div className="cardContainer">
-      {games.map(game => (
-        <Link key={game.id} to={`/pageGame/${game.id}`}>
-          <Card
-            title={game.titolo}
-            coverSrc={game.src_copertina}
-            discount={20}
-          />
-        </Link>
-      ))}
-    </div>
-  </div>
-    );
+      <>
+              <div className="homePage">
+          <Navbar />
+          <div className="cardContainer">
+            {games.map(game => (
+              <Link key={game.id} to={`/pageGame/${game.id}`}>
+                <Card
+                  title={game.titolo}
+                  coverSrc={game.src_copertina}
+                  discount={game.discount}
+                  />
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Footer/>
+      </>
+    )}

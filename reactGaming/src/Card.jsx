@@ -13,4 +13,4 @@ export function Card({ title, coverSrc, discount }) {
             </Link>
             <h2>{title}</h2>
         </div>
-    );
+    )}

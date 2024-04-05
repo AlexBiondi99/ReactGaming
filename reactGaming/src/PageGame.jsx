@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ButtonCart } from "./ButtonCart";
 import { ButtonPrefer } from "./ButtonPrefer";
 import { Navbar } from "./Navbar";
-
+import { Footer } from "./Footer";
 
 export function PageGame() {
   const [gameData, setGameData] = useState(null);
@@ -21,6 +21,7 @@ export function PageGame() {
   }
 
   return (
+    <>
     <div className="pageGame">
       <Navbar />
       <div className="imageGame">
@@ -47,5 +48,7 @@ export function PageGame() {
         <p>{gameData.descrizione}</p>
       </div>
     </div>
+    <Footer/>
+  </>
   );
 }
