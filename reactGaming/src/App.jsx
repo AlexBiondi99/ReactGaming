@@ -8,6 +8,7 @@ import { CallFake } from "./CallFake";
 import { Favorites } from "./Favorites";
 import { ProfilePage } from "./ProfilePage";
 import { ProfileDataMok } from "./ProfileDataMok";
+import { PaymentPage } from "./PaymentPage"
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
         <Route path="cart" element={<Cart />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="profile" element={<ProfileDataMok />} />
+        <Route path="payment" element={<PaymentPage />} />
       </Routes>
     </div>
   );

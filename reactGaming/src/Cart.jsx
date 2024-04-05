@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ButtonCheckout } from "./ButtonCheckout";
+
 export function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
+
+  const history = useNavigate();
+  
   useEffect(() => {
     let total = 0;
     cartItems.forEach((element) => {
@@ -122,7 +127,7 @@ export function Cart() {
       ))}
       <div className="totalPrice">
         {`${totalPrice.toFixed(2)} $`}
-        <button className="ceckoutButton">Go to checkout</button>
+        <ButtonCheckout />
       </div>
     </div>
   );
