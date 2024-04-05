@@ -1,5 +1,5 @@
-// import Baldurgate3 from "./images/Baldurgate3.jpg";
-// import thewitcher from "./images/thewitcher.jpg";
+import Baldurgate3 from "./imageslogin/Baldurgate3.jpg";
+import thewitcher from "./imageslogin/thewitcher_copertina.jpg"
 // import laracroft from "./images/lara-croft.jpg";
 // import GOW from "./images/god-of-war.jpg";
 import { useEffect, useState } from "react";
