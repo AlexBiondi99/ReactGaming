@@ -6,6 +6,8 @@ import { HomePage } from "./homePage";
 import { Cart } from "./Cart";
 import { CallFake } from "./CallFake";
 import { Favorites } from "./Favorites";
+import { ProfilePage } from "./ProfilePage";
+import { ProfileDataMok } from "./ProfileDataMok";
 
 export function App() {
   return (
@@ -17,6 +19,7 @@ export function App() {
         <Route path="signup" element={<Subscription />} />
         <Route path="cart" element={<Cart />} />
         <Route path="favorites" element={<Favorites />} />
+        <Route path="pofile" element={<ProfileDataMok />} />
       </Routes>
     </div>
   );
