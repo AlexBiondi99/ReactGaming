@@ -21,7 +21,7 @@ export function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/api/games" element={<APIDataComponent />}/> {/* Aggiungi la nuova route per gestire le richieste API */}
                 <Route path="favorites" element={<Favorites />} />
-                  <Route path="profile" element={<ProfileDataMok />} />
+                <Route path="profile" element={<ProfileDataMok />} />
             </Routes>
         </div>
     );
