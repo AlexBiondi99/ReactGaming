@@ -19,7 +19,7 @@ export function App() {
         <Route path="signup" element={<Subscription />} />
         <Route path="cart" element={<Cart />} />
         <Route path="favorites" element={<Favorites />} />
-        <Route path="pofile" element={<ProfileDataMok />} />
+        <Route path="profile" element={<ProfileDataMok />} />
       </Routes>
     </div>
   );
