@@ -1,13 +1,15 @@
 import { PageGame } from "./PageGame";
 
 export function CallFake() {
-    const gameData = {
-        id:1,
-        backgroundImage:'https://media.gqitalia.it/photos/5ebe65be37e00fb8bbea13b0/master/pass/grand-theft-auto-v.jpg',
-        title: 'Grand theft auto V',
-        image: 'https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/7337.jpeg',
-        price: 65.20,
-        description:` Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+  const gameData = {
+    id: 1,
+    backgroundImage:
+      "https://media.gqitalia.it/photos/5ebe65be37e00fb8bbea13b0/master/pass/grand-theft-auto-v.jpg",
+    title: "Grand theft auto V",
+    image:
+      "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/7337.jpeg",
+    price: 65.2,
+    description: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
         aliquid delectus tempora corporis, aperiam deleniti accusantium,
         voluptates error hic voluptatum libero omnis esse nobis numquam earum
         aut illo, sapiente aspernatur culpa incidunt. Quia dolores, quidem
@@ -25,11 +27,11 @@ export function CallFake() {
         eligendi voluptatem aliquam alias nobis, autem libero doloremque, non
         assumenda hic repellat! Alias aspernatur quas, officiis labore aliquid
         dolorum. Laboriosam aut accusamus, necessitatibus rerum fugiat ullam
-        dicta veritatis dignissimos voluptates.`
-      } 
-    return(
-        <>
-            <PageGame gameData={gameData} />
-        </>
-    )
+        dicta veritatis dignissimos voluptates.`,
+  };
+  return (
+    <>
+      <PageGame gameData={gameData} />
+    </>
+  );
 }

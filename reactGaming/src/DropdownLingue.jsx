@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
- 
+import React, { useState } from "react";
 
 const Dropdown = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('Italiano'); 
-  const languages = ['Italiano', 'Inglese', 'Spagnolo', 'Francese']; 
+  const [selectedLanguage, setSelectedLanguage] = useState("Italiano");
+  const languages = ["Italiano", "Inglese", "Spagnolo", "Francese"];
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
-
   };
 
   return (

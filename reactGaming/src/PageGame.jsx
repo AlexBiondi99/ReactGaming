@@ -4,6 +4,7 @@ import { ButtonCart } from "./ButtonCart";
 import { ButtonPrefer } from "./ButtonPrefer";
 import { Navbar } from "./Navbar";
 
+
 export function PageGame() {
   const [gameData, setGameData] = useState(null);
   const { id } = useParams();
@@ -27,14 +28,19 @@ export function PageGame() {
       </div>
       <div className="schedaGioco">
         <img src={gameData.src_copertina} alt="Cover" />
+        <img src={gameData.backgroundImage} />
+      </div>
+
+      <div className="schedaGioco">
+        <img src={gameData.image} alt="" />
       </div>
       <div className="title">
         <h1>{gameData.titolo}</h1>
       </div>
       <div className="price">{`${gameData.prezzo}€`}</div>
       <div className="buttons">
-        <ButtonPrefer />
-        <ButtonCart gameData={gameData}/>
+        <ButtonPrefer gameData={gameData} />
+        <ButtonCart gameData={gameData} />
       </div>
       <div className="description">
         <h2>DESCRIPTION :</h2>

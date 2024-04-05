@@ -1,24 +1,24 @@
- @import url(main.scss);
+@import url(main.scss);
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 #root {
     background: var(--primaryColor);
     height: 100%;
     width: 100%;
 }
-body{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+body {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.page{
-    background: var(--primaryColor);
-    font-size: 40px; // provvisorio
+.page {
+  background: var(--primaryColor);
+  font-size: 40px; // provvisorio
 }
 .homePage {
     background: var(--primaryColor);
@@ -38,420 +38,435 @@ body{
     justify-content: space-between;
     // box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5) ;
     border-radius: 20px;
-    display: flex;
     height: 500px;
     background: var(--secondaryColor);
     transition: transform 0.3s ease ;
     margin-top: 120px;
 
 }
+
+}
 .boxCard:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .linkContainer {
-    position: relative;
+  position: relative;
 }
 .sconto {
-    background: rgb(255, 140, 0);
-    position: absolute; 
-    bottom:0; 
-    left: 0; 
-    padding: 10px;
-    z-index: 1;
-    border-top-right-radius: 50px;
-    text-decoration: none;
-    color: #000000;
-    box-shadow: 10px -10px 8px black;
+  background: rgb(255, 140, 0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  z-index: 1;
+  border-top-right-radius: 50px;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 10px -10px 8px black;
 }
 .pageGame {
-    background: var(--primaryColor);
-    height: 100%;
-    width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding-top: 40%;
-
+  background: var(--primaryColor);
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding-top: 40%;
 }
 .imageGame {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    opacity: 0.5;
-    overflow: hidden;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  opacity: 0.5;
+  overflow: hidden;
 }
 .schedaGioco {
-    z-index: 1;
-
+  z-index: 1;
 }
 h1 {
-    font-size: var(--fontSizeTitle);
-    z-index: 1;
+  font-size: var(--fontSizeTitle);
+  z-index: 1;
 }
 p {
-    font-size: var(--fontSizeText);
-    z-index: 1;
+  font-size: var(--fontSizeText);
+  z-index: 1;
 }
 h2 {
-    font-size: 30px;
-    z-index: 1;
+  font-size: 30px;
+  z-index: 1;
 }
 .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 30%;
-    z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  z-index: 1;
 }
 .description {
-    margin-top: 40px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left:150px ;
-    padding-right: 150px;
-    background: var(--primaryColor);
-    padding: 50px;
-    z-index: 1;
-    border-radius: 50px;
-    box-shadow: 20px 20px 20px  black;
+  margin-top: 40px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  background: var(--primaryColor);
+  padding: 50px;
+  z-index: 1;
+  border-radius: 50px;
+  box-shadow: 20px 20px 20px black;
 }
-.addToPrefer, .addToCart {
-    width: 300px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--secondaryColor);
-    transition: transform 0.3s ease ;
-    border-radius: 20px;
-    box-shadow: 20px 20px 20px  black;
-    z-index: 1;
-    transition: transform 0.3s ease ;
-    border: none;
-    margin-left: 20px;
-    margin-right: 20px;
+.addToPrefer,
+.addToCart {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondaryColor);
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 20px 20px 20px black;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .addToPrefer:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
- .addToCart:hover {
-        transform: scale(1.1);
+.addToCart:hover {
+  transform: scale(1.1);
 }
 .loginPage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-    color: white;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  color: white;
 }
 
-.stylePart1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
+.stylePart1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  width: 50%;
+}
+.ImageBoxLogin {
+  width: 50%;
+
+  max-height: 100%;
+  overflow: hidden;
 }
 
-.ImageBoxLogin{
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.ImageLogin{
-    width: 100%;
-    object-fit:contain;
-    height: 100%;
-    // overflow: hidden;
+.ImageLogin {
+  width: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  // overflow: hidden;
 }
 
 .loginForm {
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 .subscriptionForm {
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-    width: 35%;
-    border-radius: 80px;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 35%;
+  border-radius: 80px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 input {
-    height: 50px;
-    color: white;
-    background-color: #454545;
-    font-size: 30px;
-    border-radius: 30px;
-    display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
+  height: 50px;
+  color: white;
+  background-color: #454545;
+  font-size: 30px;
+  border-radius: 30px;
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .formButton {
-    color: white;
-    font-size: 30px;
-    width: 50%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--primaryColor);
-    transition: transform 0.3s ease ;
-    border-radius: 20px;
-    box-shadow: 20px 20px 20px  black;
-    z-index: 1;
-    transition: transform 0.3s ease ;
-    border: none;
+  color: white;
+  font-size: 30px;
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primaryColor);
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 20px 20px 20px black;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  border: none;
 }
-.formButton:hover{
-    transform: scale(1.1);
+.formButton:hover {
+  transform: scale(1.1);
 }
 .navbar {
-    display: flex;
-    height: 100px;
-    background: var(--secondaryColor);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    justify-content: end;
-    padding-left: 20px;
-    padding-right: 20px;
-    align-items: center;
-    z-index: 100;
+  display: flex;
+  height: 80px;
+  background: var(--secondaryColor);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  justify-content: end;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  z-index: 100;
 }
+
+.ToastAlert {
+  font-size: small;
+}
+
 .loginButton {
-    display: flex;
-    align-items: center;
-    width: 100px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--primaryColor);
-    transition: transform 0.3s ease ;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 5px 5px 5px black;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primaryColor);
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px 5px black;
 }
 .loginButton:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .linkLogin {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .linkIscrizione {
-    font-size: 30px;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    transition: transform 0.3s ease ;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: transform 0.3s ease;
 }
 .linkIscrizione:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .cls-1NoNav {
-    fill: #fff;
+  fill: #fff;
 }
 .cls-1 {
-    fill: #fff;
-  }
+  fill: #fff;
+}
 
-  .cls-1, .cls-2 {
-    stroke-width: 0px;
-  }
+.cls-1,
+.cls-2 {
+  stroke-width: 0px;
+}
 
-  .cls-2 {
-    fill: red;
-  }
-  .logoNavbar {
-    width: 300px;
-  }
-  .boxLogo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-  .utilityBox {
-    flex: 1;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: end;
-    gap: 20px;
-  }
-  .cls-3 {
-    fill: #fff;
-    stroke-width: 0px;
+.cls-2 {
+  fill: red;
+}
+.logoNavbar {
+  width: 300px;
+}
+.boxLogo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.utilityBox {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+.cls-3 {
+  fill: #fff;
+  stroke-width: 0px;
 }
 .svgCart {
-    width: 35px;
-    transition: transform 0.3s ease ;
+  width: 35px;
+  transition: transform 0.3s ease;
+}
+.svgFavorites {
+  width: 35px;
+  transition: transform 0.3s ease;
+}
+.svgFavorites:hover {
+  transform: scale(1.2);
 }
 .svgCart:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 .cartPage {
-    width: 100vw;
-    height: 100vh;
-    background: var(--primaryColor);
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: var(--primaryColor);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 .boxItemCart {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    background: var(--secondaryColor);
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 20px 20px 20px black;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  background: var(--secondaryColor);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 20px 20px 20px black;
 }
 .infoItemCart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    height: 100%;
-    margin-left: 30px;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+  margin-left: 30px;
 }
 .title {
-    color: #000000;
-    z-index: 999;
-    
+  color: #000000;
+  z-index: 999;
 }
 .titleGameCart {
-    color: var(--primaryColor);
-    font-size: 30px;
-    font-weight: bold;
+  color: var(--primaryColor);
+  font-size: 30px;
+  font-weight: bold;
 }
 .priceCart {
-    color: var(--primaryColor);
-    font-size: 30px;
-    font-weight: bold;
+  color: var(--primaryColor);
+  font-size: 30px;
+  font-weight: bold;
 }
-.removeToCart {
-    background: var(--primaryColor);
-    color: white;
-    height: 30px;
-    width: 100px;
-    border: none;
-    border-radius: 30px;
-    box-shadow: 5px 5px 5px black;
-    transition: transform 0.3s ease ;
+.removeToCart,
+.moveToCartButton {
+  background: var(--primaryColor);
+  color: white;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px black;
+  transition: transform 0.3s ease;
 }
 .removeToCart:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+.linkToCartFromFavorites {
+  text-decoration: none;
+  color: white;
 }
 .totalPrice {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background: var(--secondaryColor);
-    color:var(--primaryColor);
-    font-weight: bold;
-    justify-content: space-around;
-    border-radius: 30px;
-    box-shadow: 20px 20px 20px black;
-    width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: var(--secondaryColor);
+  color: var(--primaryColor);
+  font-weight: bold;
+  justify-content: space-around;
+  border-radius: 30px;
+  box-shadow: 20px 20px 20px black;
+  width: 100%;
 }
 .ceckoutButton {
-    background: var(--primaryColor);
-    color: white;
-    height: 30px;
-    width: 100px;
-    border: none;
-    border-radius: 30px;
-    box-shadow: 5px 5px 5px black;
-    transition: transform 0.3s ease ;
+  background: var(--primaryColor);
+  color: white;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px black;
+  transition: transform 0.3s ease;
 }
 .ceckoutButton:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .quantity {
-    display: flex;
-    width: 100px;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
 }
 .quantityBox {
-    display: flex;
-    width: 50px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
-    background: var(--primaryColor);
-    color: #fff;
-    font-size: 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    pointer-events: none;
+  display: flex;
+  width: 50px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background: var(--primaryColor);
+  color: #fff;
+  font-size: 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  pointer-events: none;
 }
 .inc {
-    width: 20px;
-    height: 26px;
-    border: none;
-    font-size: 20px;
-    color: #fff;
-    background: var(--primaryColor);
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease ;
+  width: 20px;
+  height: 26px;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  background: var(--primaryColor);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 .dec {
-    width: 20px;
-    height: 26px;
-    border: none;
-    font-size: 20px;
-    color: #fff;
-    background: var(--primaryColor);
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 3px;
-    transition: transform 0.3s ease ;
+  width: 20px;
+  height: 26px;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  background: var(--primaryColor);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  transition: transform 0.3s ease;
 }
 .inc:hover {
-    transform: scale(1.3);
+  transform: scale(1.3);
 }
 .dec:hover {
-    transform: scale(1.3);
+  transform: scale(1.3);
 }
 .imgCard {
     width: 100%;
@@ -464,3 +479,46 @@ input {
     gap: 30px;
     max-width: 1200px;
 }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 150px;
+  position: relative;
+  top: 0;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 100;
+  align-items: center;
+  background: var(--secondaryColor);
+  color: black;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+  font-size: medium;
+  gap: 10px;
+}
+
+.hrFooter {
+  width: 50%;
+}
+
+.subFooter {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.subFooterParagraph {
+  font-size: small;
+}
+

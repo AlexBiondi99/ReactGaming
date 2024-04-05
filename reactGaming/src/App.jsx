@@ -5,6 +5,7 @@ import { LoginForm } from "./LoginForm";
 import { Subscription } from "./Subscription";
 import { Cart } from "./Cart";
 import { PageGame } from "./PageGame"; 
+import { Favorites } from "./Favorites";
 
 
 export function App() {
@@ -16,7 +17,8 @@ export function App() {
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/signup" element={<Subscription />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/api/games" element={<APIDataComponent />} /> {/* Aggiungi la nuova route per gestire le richieste API */}
+                <Route path="/api/games" element={<APIDataComponent />}/> {/* Aggiungi la nuova route per gestire le richieste API */}
+                <Route path="favorites" element={<Favorites />} />
             </Routes>
         </div>
     );
@@ -30,5 +32,3 @@ function PageGameWrapper() {
 
 
 function APIDataComponent() {
- 
-}
