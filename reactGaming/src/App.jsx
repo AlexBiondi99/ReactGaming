@@ -10,7 +10,6 @@ import { ProfilePage } from "./ProfilePage";
 import { ProfileDataMok } from "./ProfileDataMok";
 import { PaymentPage } from "./PaymentPage"
 
-<<<<<<< HEAD
 export function App() {
   return (
     <div className="page">
@@ -26,24 +25,6 @@ export function App() {
       </Routes>
     </div>
   );
-=======
-
-
-    return (
-        <div className="page">
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/pageGame/:id" element={<PageGameWrapper />} /> {/* Utilizza un wrapper per PageGame per passare i parametri */}
-                <Route path="/login" element={<LoginForm />} />
-                <Route path="/signup" element={<Subscription />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/api/games" element={<APIDataComponent />}/> {/* Aggiungi la nuova route per gestire le richieste API */}
-                <Route path="favorites" element={<Favorites />} />
-                  <Route path="profile" element={<ProfileDataMok />} />
-            </Routes>
-        </div>
-    );
->>>>>>> a4e65b499daa094768356a9961e65ad3369f96ab
 }
 
 
