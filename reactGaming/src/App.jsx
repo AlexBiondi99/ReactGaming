@@ -10,7 +10,7 @@ import { ProfilePage } from "./ProfilePage";
 import { ProfileDataMok } from "./ProfileDataMok";
 
 
-
+export function App() {
     return (
         <div className="page">
             <Routes>
