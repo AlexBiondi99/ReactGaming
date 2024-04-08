@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ButtonCheckout } from "./ButtonCheckout";
+import { loadStripe } from "@stripe/stripe-js";
 
 export function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -8,8 +8,6 @@ export function Cart() {
     JSON.parse(localStorage.getItem("cart")) || []
   );
 
-  const history = useNavigate();
-  
   useEffect(() => {
     let total = 0;
     cartItems.forEach((element) => {
@@ -44,6 +42,40 @@ export function Cart() {
     setCartItems(updatedCartItems);
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
   }
+  const makePayment = async () => {
+    const stripe = await loadStripe(
+      "pk_test_51P2HLiRoi57u1ESVmfqZCtOsx6Ci7yLSwBFrxuYw7LNnNAeFazWSPClWJY3RbF7NIEILsZOxtGxLhKuy96DXlcEQ00e4IC84SW"
+    );
+
+    const body = {
+      products: cartItems, // Utilizzo direttamente i dati presenti nel carrello
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    try {
+      const response = await fetch(`http://localhost:3000/create-checkout-session`, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body),
+      });
+      const session = await response.json();
+
+      const result = stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+      if (result.error) {
+        console.error(
+          "Errore durante il reindirizzamento al checkout:",
+          result.error
+        );
+      } else {
+        console.log("Reindirizzamento al checkout eseguito con successo!");
+      }
+    } catch (error) {
+      console.error("Errore durante il pagamento:", error);
+    }
+  };
   return (
     <div className="cartPage">
       <Link to="/">
@@ -127,7 +159,9 @@ export function Cart() {
       ))}
       <div className="totalPrice">
         {`${totalPrice.toFixed(2)} $`}
-        <ButtonCheckout />
+        <button className="ceckoutButton" onClick={makePayment}>
+          Go To Checkout
+        </button>
       </div>
     </div>
   );

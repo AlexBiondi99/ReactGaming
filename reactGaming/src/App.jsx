@@ -1,4 +1,5 @@
 import { Route, Routes, useParams } from "react-router-dom";
+import React from "react";
 import { HomePage } from "./homePage";
 import { CallFake } from "./CallFake";
 import { LoginForm } from "./LoginForm";
@@ -8,7 +9,8 @@ import { PageGame } from "./PageGame";
 import { Favorites } from "./Favorites";
 import { ProfilePage } from "./ProfilePage";
 import { ProfileDataMok } from "./ProfileDataMok";
-import { PaymentPage } from "./PaymentPage"
+import { SusccessPaymentPage } from "./SuccessPaymentPage";
+import { CancelPaymentPage } from "./CancelPaymentPage";
 
 export function App() {
   return (
@@ -21,17 +23,11 @@ export function App() {
         <Route path="cart" element={<Cart />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="profile" element={<ProfileDataMok />} />
-        <Route path="payment" element={<PaymentPage />} />
+        <Route path="succes" element={<SusccessPaymentPage />} />
+        <Route path="cancel" element={<CancelPaymentPage />} />
       </Routes>
     </div>
   );
 }
 
 
-function PageGameWrapper() {
-    let { id } = useParams(); 
-    return <PageGame gameId={id} />; 
-}
-
-
-function APIDataComponent() {}

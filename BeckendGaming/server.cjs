@@ -1,7 +1,35 @@
 const express = require('express')
 const { Pool } = require('pg');
+const stripe = require("stripe")(process.env.STRIPE_SECRET)
 
 const app = express();
+
+//_________ stripe___________
+
+app.post("/create-checkout-session", async(req, res) => {
+  const {products} = req.body
+  const lineItems = products.map((product) => ({
+    priceData: {
+      currency: "€",
+      product_data: {
+       name: product.name,
+       images: [product.image]
+      },
+      unit_mount:Math.round(product.price * 100),
+    },
+    quantity: product.quantity
+  }))
+  const session = await stripe.checkout.session.create({
+    payment_method_types: ["card"],
+    lineItems : lineItems,
+    mode: "payment",
+    succes_url:"http://localhost:5173/succes",
+    cancel_url:"http://localhost:5173/cancel"
+  })
+  res.json({id: session.id})
+})
+
+//___________________________
 
 const pool = new Pool({
   user: 'postgres',
@@ -28,9 +56,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.listen(3000, () => {
-    console.log("Server in ascolto sulla porta 3000");
-})
+
 
 app.get('/', (req, res) => {
     res.send('Benvenuto su ReactGaming Server!');
@@ -100,4 +126,6 @@ app.get('/api/games/:id', async (req, res) => {
       res.status(500).json({ error: 'Errore durante il recupero dei giochi' });
     }
   });
-  
+  app.listen(3000, () => {
+    console.log("Server in ascolto sulla porta 3000");
+})
