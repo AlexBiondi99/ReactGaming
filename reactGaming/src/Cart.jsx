@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
 
 export function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -11,7 +12,7 @@ export function Cart() {
   useEffect(() => {
     let total = 0;
     cartItems.forEach((element) => {
-      total += element.price * element.quantity;
+      total += element.prezzo * element.quantity;
     });
     setTotalPrice(total);
   }, [cartItems]);
@@ -42,40 +43,7 @@ export function Cart() {
     setCartItems(updatedCartItems);
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
   }
-  const makePayment = async () => {
-    const stripe = await loadStripe(
-      "pk_test_51P2HLiRoi57u1ESVmfqZCtOsx6Ci7yLSwBFrxuYw7LNnNAeFazWSPClWJY3RbF7NIEILsZOxtGxLhKuy96DXlcEQ00e4IC84SW"
-    );
-
-    const body = {
-      products: cartItems, // Utilizzo direttamente i dati presenti nel carrello
-    };
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    try {
-      const response = await fetch(`http://localhost:3000/create-checkout-session`, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(body),
-      });
-      const session = await response.json();
-
-      const result = stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
-      if (result.error) {
-        console.error(
-          "Errore durante il reindirizzamento al checkout:",
-          result.error
-        );
-      } else {
-        console.log("Reindirizzamento al checkout eseguito con successo!");
-      }
-    } catch (error) {
-      console.error("Errore durante il pagamento:", error);
-    }
-  };
+ 
   return (
     <div className="cartPage">
       <Link to="/">
@@ -135,10 +103,10 @@ export function Cart() {
       </Link>
       {cartItems.map((item) => (
         <div className="boxItemCart" key={item.id}>
-          <img className="imageCartgame" src={item.image} alt="" />
+          <img className="imageCartgame" src={item.src_copertina} alt="" />
           <div className="infoItemCart">
-            <p className="titleGameCart">{item.title}</p>
-            <p className="priceCart">{`${item.price} €`}</p>
+            <p className="titleGameCart">{item.titolo}</p>
+            <p className="priceCart">{`${item.prezzo} €`}</p>
             <div className="quantity">
               <button className="dec" onClick={() => decreaseQuantity(item.id)}>
                 -
@@ -159,7 +127,7 @@ export function Cart() {
       ))}
       <div className="totalPrice">
         {`${totalPrice.toFixed(2)} $`}
-        <button className="ceckoutButton" onClick={makePayment}>
+        <button className="ceckoutButton" >
           Go To Checkout
         </button>
       </div>

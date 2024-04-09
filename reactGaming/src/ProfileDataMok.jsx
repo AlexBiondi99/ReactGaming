@@ -1,4 +1,5 @@
 import { ProfilePage } from "./ProfilePage"
+import React from "react";
 
 export function ProfileDataMok () {
     const personalData = {

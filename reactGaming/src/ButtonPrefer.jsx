@@ -1,3 +1,4 @@
+import React from "react";
 export function ButtonPrefer({ gameData }) {
   function addToFavorites() {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];

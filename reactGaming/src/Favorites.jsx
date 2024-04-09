@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import React from "react";
 
 export function Favorites() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -14,7 +15,7 @@ export function Favorites() {
   useEffect(() => {
     let total = 0;
     favoriteItems.forEach((element) => {
-      total += element.price * element.quantity;
+      total += element.prezzo * element.quantity;
     });
     setTotalPrice(total);
     localStorage.setItem("favorites", JSON.stringify(favoriteItems));
@@ -108,10 +109,10 @@ export function Favorites() {
       </Link>
       {favoriteItems.map((item) => (
         <div className="boxItemCart" key={item.id}>
-          <img className="imageCartgame" src={item.image} alt="" />
+          <img className="imageCartgame" src={item.src_copertina} alt="" />
           <div className="infoItemCart">
-            <p className="titleGameCart">{item.title}</p>
-            <p className="priceCart">{`${item.price} €`}</p>
+            <p className="titleGameCart">{item.titolo}</p>
+            <p className="priceCart">{`${item.prezzo} €`}</p>
             <button
               className="removeToCart"
               onClick={() => removeFromCart(item.id)}

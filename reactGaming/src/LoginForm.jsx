@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import React from "react";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");

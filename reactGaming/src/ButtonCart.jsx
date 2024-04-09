@@ -1,3 +1,4 @@
+import React from "react";
 export function ButtonCart({ gameData }) {
   function addToCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
