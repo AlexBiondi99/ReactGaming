@@ -1,34 +1,45 @@
 const express = require('express')
 const { Pool } = require('pg');
-const stripe = require("stripe")(process.env.STRIPE_SECRET)
+const cors = require('cors')
+const stripe = require("stripe")('sk_test_51P2HLiRoi57u1ESVBt3EgiIe2q82ajxrTtqmsRX8WdPOz9tCpzHYK4NURXxRZXsY8eYqE12jT06ZBjXm1PYsRjqh00d3ll2HK0')
 
 const app = express();
+app.use(express.json())
 
 //_________ stripe___________
-
-app.post("/create-checkout-session", async(req, res) => {
-  const {products} = req.body
-  const lineItems = products.map((product) => ({
-    priceData: {
-      currency: "€",
-      product_data: {
-       name: product.name,
-       images: [product.image]
-      },
-      unit_mount:Math.round(product.price * 100),
-    },
-    quantity: product.quantity
-  }))
-  const session = await stripe.checkout.session.create({
-    payment_method_types: ["card"],
-    lineItems : lineItems,
-    mode: "payment",
-    succes_url:"http://localhost:5173/succes",
-    cancel_url:"http://localhost:5173/cancel"
-  })
-  res.json({id: session.id})
-})
-
+app.use(cors({origin: '*'}))
+app.post('/api/create-checkout-session', async (req, res) => {
+  console.log('Body della richiesta:', req.body)
+  if(!req.body || !req.body.cartItems) {
+    return res.status(400).json({ error: 'Dati mancanti nel corpo della richiesta' })
+  }
+  const { cartItems, totalPrice } = req.body;
+  console.log('status',cartItems)
+  try {
+    
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: cartItems.map(item => ({
+        price_data: {
+          currency: 'eur', 
+          product_data: {
+            name: item.title,
+          },
+          unit_amount: item.price * 100, 
+        },
+        quantity: item.quantity,
+      })),
+      mode: 'payment',
+      success_url: 'https://example.com/success', 
+      cancel_url: 'https://example.com/cancel', 
+    });
+    res.json({ id: session.id });
+    console.log('ID della sessione:', session.id);
+  } catch (error) {
+    console.error('Errore durante la creazione della sessione di checkout:', error);
+    res.status(500).json({ error: 'Errore durante la creazione della sessione di checkout' });
+  }
+});
 //___________________________
 
 const pool = new Pool({

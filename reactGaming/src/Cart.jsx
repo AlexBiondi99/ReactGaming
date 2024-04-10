@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
+const stripePromise = loadStripe('pk_test_51P2HLiRoi57u1ESVmfqZCtOsx6Ci7yLSwBFrxuYw7LNnNAeFazWSPClWJY3RbF7NIEILsZOxtGxLhKuy96DXlcEQ00e4IC84SW')
 
 export function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -43,7 +44,36 @@ export function Cart() {
     setCartItems(updatedCartItems);
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
   }
- 
+  
+
+  async function handleCheckout() {
+    const cleanCartItems = cartItems.map(item => ({
+      title: item.titolo,
+      price: item.prezzo,
+      quantity: item.quantity
+    }));
+    
+    const stripe = await stripePromise;
+    try {
+      const response = await fetch('http://localhost:3000/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cartItems: cleanCartItems, totalPrice }),
+      });
+      const session = await response.json();
+      const result = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+      if (result.error) {
+        console.error(result.error);
+      }
+      console.log(result)
+    } catch (error) {
+      console.error('Errore durante la gestione del checkout:', error);
+    }
+  }
   return (
     <div className="cartPage">
       <Link to="/">
@@ -127,7 +157,7 @@ export function Cart() {
       ))}
       <div className="totalPrice">
         {`${totalPrice.toFixed(2)} $`}
-        <button className="ceckoutButton" >
+        <button className="ceckoutButton" onClick={handleCheckout}>
           Go To Checkout
         </button>
       </div>
