@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
-import React from "react";
-const stripePromise = loadStripe('pk_test_51P2HLiRoi57u1ESVmfqZCtOsx6Ci7yLSwBFrxuYw7LNnNAeFazWSPClWJY3RbF7NIEILsZOxtGxLhKuy96DXlcEQ00e4IC84SW')
+
+
 
 export function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
-
+  const navigate = useNavigate()
   useEffect(() => {
     let total = 0;
     cartItems.forEach((element) => {
@@ -47,6 +47,7 @@ export function Cart() {
   
 
   async function handleCheckout() {
+    const stripePromise = loadStripe('pk_test_51P2HLiRoi57u1ESVmfqZCtOsx6Ci7yLSwBFrxuYw7LNnNAeFazWSPClWJY3RbF7NIEILsZOxtGxLhKuy96DXlcEQ00e4IC84SW')
     const cleanCartItems = cartItems.map(item => ({
       title: item.titolo,
       price: item.prezzo,
@@ -61,15 +62,16 @@ export function Cart() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ cartItems: cleanCartItems, totalPrice }),
+        mode: 'cors',
       });
       const session = await response.json();
-      const result = await stripe.redirectToCheckout({
+      navigate(stripe.redirectToCheckout({
         sessionId: session.id,
-      });
-      if (result.error) {
-        console.error(result.error);
+      })) 
+      if (response.error) {
+        console.error(response.error);
       }
-      console.log(result)
+      console.log(response)
     } catch (error) {
       console.error('Errore durante la gestione del checkout:', error);
     }
