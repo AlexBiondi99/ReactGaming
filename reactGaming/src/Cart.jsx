@@ -121,7 +121,7 @@ export function Cart() {
         </div>
       ))}
       <div className="totalPrice">
-        {`${totalPrice.toFixed(2)} $`}
+        {`${totalPrice.toFixed(2)} €`}
         <button className="ceckoutButton">Go to checkout</button>
       </div>
     </div>

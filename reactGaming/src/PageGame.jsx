@@ -33,10 +33,10 @@ export function PageGame() {
       </div>
 
       <div className="schedaGioco">
-        <img src={gameData.image} alt="" />
+        <img src={gameData.image} alt=""/>
       </div>
       <div className="title">
-        <h1>{gameData.titolo}</h1>
+        <h1 className="titolo_pagegame">{gameData.titolo}</h1>
       </div>
       <div className="price">{`${gameData.prezzo}€`}</div>
       <div className="buttons">
