@@ -6,6 +6,7 @@ const stripe = require("stripe")('sk_test_51P2HLiRoi57u1ESVBt3EgiIe2q82ajxrTtqms
 const app = express();
 app.use(express.json())
 
+
 //_________ stripe___________
 app.use(cors({origin: '*'}))
 app.post('/api/create-checkout-session', async (req, res) => {
@@ -49,6 +50,10 @@ const pool = new Pool({
   password: 'root',
   port: 5432,
 });
+
+app.listen(3000, () => {
+  console.log("Server in ascolto sulla porta 3000");
+})
 
 pool.connect((err,client,release) => {
     if(err) {

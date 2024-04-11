@@ -119,7 +119,6 @@ export function Navbar() {
               Logout
             </Link>
           </button>
-        )}
         <button className="loginButton">
             <Link className="linkLogin" to="/profile">
               Profile

@@ -20,7 +20,7 @@ export function App() {
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/signup" element={<Subscription />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/api/games" element={<APIDataComponent />}/> {/* Aggiungi la nuova route per gestire le richieste API */}
+                {/* <Route path="/api/games" element={<APIDataComponent />}/> Aggiungi la nuova route per gestire le richieste API */}
                 <Route path="favorites" element={<Favorites />} />
                 <Route path="profile" element={<ProfileDataMok />} />
             </Routes>
