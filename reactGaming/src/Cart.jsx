@@ -160,7 +160,7 @@ export function Cart() {
       ))}
       <div className="totalPrice">
         {`${totalPrice.toFixed(2)} €`}
-        <button className="ceckoutButton">Go to checkout</button>
+        <button className="ceckoutButton" onClick={handleCheckout}>Go to checkout</button>
 
       </div>
     </div>
