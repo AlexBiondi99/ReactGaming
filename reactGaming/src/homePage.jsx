@@ -33,10 +33,12 @@ export function HomePage() {
           <div className="cardContainer">
             {games.map(game => (
               <Link key={game.id} to={`/pageGame/${game.id}`}>
+                
                 <Card
                   title={game.titolo}
                   coverSrc={game.src_copertina}
-                  discount={game.discount}
+                  discount={`${game.discount}%`}
+                  price = {game.prezzo}
                   />
               </Link>
             ))}

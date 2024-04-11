@@ -64,7 +64,7 @@ export function LoginForm() {
       <div className="loginPage">
         <div className="stylePart1">
           <form className="loginForm" onSubmit={handleButtonPress}>
-            <h1>Log In:</h1>
+            <h1>Log in:</h1>
             <input
               placeholder="Email:"
               type="email"
@@ -79,7 +79,7 @@ export function LoginForm() {
             />
             <button className="formButton">Accedi</button>
             <Link className="linkIscrizione" to="/signup">
-              Non hai un account? iscriviti ora
+              Non hai un account? Iscriviti ora
             </Link>
           </form>
         </div>

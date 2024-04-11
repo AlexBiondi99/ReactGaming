@@ -8,15 +8,30 @@ export function Footer() {
         <li>
           <a href="#">Su di noi</a>
         </li>
-        <li>Lavori</li>
-        <li>Blog</li>
-        <li>Genitori</li>
-        <li>Carte regalo</li>
-        <li>Guida</li>
-        <li>Termini</li>
-        <li>Accessibilità</li>
-        <li>Privacy</li>
-        <li>Opzioni cookie</li>
+        <li>
+          <a href="#">Lavori</a>
+        </li>
+        <li>
+          <a href="#">Genitori</a>
+        </li>
+        <li>
+          <a href="#">Carte Regalo</a>
+        </li>
+        <li>
+          <a href="#">Guida</a>
+        </li>
+        <li>
+          <a href="#">Termini</a>
+        </li>
+        <li>
+          <a href="#">Accessibilità</a>
+        </li>
+        <li>
+          <a href="#">Privacy</a>
+        </li>
+        <li>
+          <a href="#">Opzioni Cookie</a>
+        </li>
       </ul>
 
       <hr className="hrFooter"></hr>

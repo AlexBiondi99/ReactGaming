@@ -159,10 +159,9 @@ export function Cart() {
         </div>
       ))}
       <div className="totalPrice">
-        {`${totalPrice.toFixed(2)} $`}
-        <button className="ceckoutButton" onClick={handleCheckout}>
-          Go To Checkout
-        </button>
+        {`${totalPrice.toFixed(2)} €`}
+        <button className="ceckoutButton">Go to checkout</button>
+
       </div>
     </div>
   );
