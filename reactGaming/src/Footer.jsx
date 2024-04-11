@@ -1,4 +1,5 @@
 import Dropdown from "./DropdownLingue";
+import React from "react";
 
 export function Footer() {
   return (

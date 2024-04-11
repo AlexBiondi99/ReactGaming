@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from "react";
 
 function handleLoginButton() {
   localStorage.setItem("isLoggedIn", "false");
@@ -112,17 +113,19 @@ export function Navbar() {
             </Link>
           </button>
         ) : (
+          <>
           <button className="loginButton" onClick={handleLoginButton}>
             <Link className="linkLogin" to="/login">
               Logout
             </Link>
           </button>
-        )}
         <button className="loginButton">
             <Link className="linkLogin" to="/profile">
               Profile
             </Link>
           </button>
+          </>
+        )}
       </div>
     </div>
   );

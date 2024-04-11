@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
+
+
+
 export function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
+  const navigate = useNavigate()
   useEffect(() => {
     let total = 0;
     cartItems.forEach((element) => {
@@ -38,6 +44,38 @@ export function Cart() {
     });
     setCartItems(updatedCartItems);
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+  }
+  
+
+  async function handleCheckout() {
+    const stripePromise = loadStripe('pk_test_51P2HLiRoi57u1ESVmfqZCtOsx6Ci7yLSwBFrxuYw7LNnNAeFazWSPClWJY3RbF7NIEILsZOxtGxLhKuy96DXlcEQ00e4IC84SW')
+    const cleanCartItems = cartItems.map(item => ({
+      title: item.titolo,
+      price: item.prezzo,
+      quantity: item.quantity
+    }));
+    
+    const stripe = await stripePromise;
+    try {
+      const response = await fetch('http://localhost:3000/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cartItems: cleanCartItems, totalPrice }),
+        mode: 'cors',
+      });
+      const session = await response.json();
+      navigate(stripe.redirectToCheckout({
+        sessionId: session.id,
+      })) 
+      if (response.error) {
+        console.error(response.error);
+      }
+      console.log(response)
+    } catch (error) {
+      console.error('Errore durante la gestione del checkout:', error);
+    }
   }
   return (
     <div className="cartPage">
@@ -123,6 +161,7 @@ export function Cart() {
       <div className="totalPrice">
         {`${totalPrice.toFixed(2)} €`}
         <button className="ceckoutButton">Go to checkout</button>
+
       </div>
     </div>
   );

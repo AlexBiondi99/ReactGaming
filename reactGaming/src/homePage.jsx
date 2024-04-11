@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navbar } from "./Navbar";
 import { Card } from "./Card";
 import { Link } from 'react-router-dom';
+import React from 'react';
 import { Footer } from './Footer';
 
 export function HomePage() {
