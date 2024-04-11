@@ -95,8 +95,7 @@ app.post('/api/login', async (req,res) => {
 
         if (result.rows.length === 1) {
             res.body = 'Login successful'
-            res.status(200).json({ message: 'Login successful ' });
-            console.log(res.body )
+            res.status(200).json(result.rows[0]);
         } else {
             res.body = 'Invalid email or password'
             res.status(400).json({ message: 'Invalid email or password' });
@@ -137,6 +136,18 @@ app.get('/api/games/:id', async (req, res) => {
       res.status(500).json({ error: 'Errore durante il recupero dei giochi' });
     }
   });
-  app.listen(3000, () => {
-    console.log("Server in ascolto sulla porta 3000");
-})
+
+
+  app.get('/api/profile', async (req, res) => {
+    try {
+      const {email} = req.query;
+      const query = 'SELECT * FROM utenti WHERE email = $1'
+      const result = await pool.query(query, [email]);
+      res.status(200).json(result.rows)
+    } catch (error) {
+      console.error('Errore nel recupero dati', error);
+      res.status(500).json({ error: 'Errore nel recupero dati' });
+    }
+  })
+  
+

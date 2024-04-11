@@ -3,6 +3,7 @@ import React from "react";
 
 function handleLoginButton() {
   localStorage.setItem("isLoggedIn", "false");
+  localStorage.setItem("email" ,"");
 }
 
 export function Navbar() {
@@ -118,7 +119,8 @@ export function Navbar() {
               Logout
             </Link>
           </button>
-          <button className="loginButton" onClick={handleLoginButton}>
+        )}
+        <button className="loginButton">
             <Link className="linkLogin" to="/profile">
               Profile
             </Link>

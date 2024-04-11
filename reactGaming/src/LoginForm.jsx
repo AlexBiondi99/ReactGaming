@@ -34,6 +34,7 @@ export function LoginForm() {
         const data = await response.json();
         console.log(data.message);
         localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("email" , data.email);
         window.location.href = "/";
       } else {
         let errorMessage = "Errore nel Login";

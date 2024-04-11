@@ -48,8 +48,9 @@ export function Favorites() {
 
     const updatedFavoriteItems = favoriteItems.filter((item) => item.id !== id);
     setFavoriteItems(updatedFavoriteItems);
-  }
 
+  }
+  console.log(favoriteItems)
   return (
     <div className="cartPage">
       <Link to="/">
