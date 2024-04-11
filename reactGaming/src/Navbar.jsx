@@ -112,17 +112,19 @@ export function Navbar() {
             </Link>
           </button>
         ) : (
+          <>
           <button className="loginButton" onClick={handleLoginButton}>
             <Link className="linkLogin" to="/login">
               Logout
             </Link>
           </button>
-        )}
-        <button className="loginButton" onClick={handleLoginButton}>
+          <button className="loginButton" onClick={handleLoginButton}>
             <Link className="linkLogin" to="/profile">
               Profile
             </Link>
           </button>
+          </>
+        )}
       </div>
     </div>
   );

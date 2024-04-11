@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 export function ButtonPrefer({ gameData }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn")
+  );
+
+  useEffect(() => {
+    setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+  }, []);
+
   function addToFavorites() {
+
+    if(!isLoggedIn) {
+      alert('Devi accedere prima di aggiungere ai preferiti.')
+      return
+    }
+
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const existingItemIndex = favorites.findIndex(
       (item) => item.id === gameData.id
