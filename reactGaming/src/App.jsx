@@ -1,6 +1,6 @@
 import { Route, Routes, useParams } from "react-router-dom";
+import React from "react";
 import { HomePage } from "./homePage";
-import { CallFake } from "./CallFake";
 import { LoginForm } from "./LoginForm";
 import { Subscription } from "./Subscription";
 import { Cart } from "./Cart";
@@ -8,6 +8,7 @@ import { PageGame } from "./PageGame";
 import { Favorites } from "./Favorites";
 import { ProfilePage } from "./ProfilePage";
 import { ProfileDataMok } from "./ProfileDataMok";
+;
 
 
 export function App() {
@@ -34,4 +35,3 @@ function PageGameWrapper() {
 }
 
 
-function APIDataComponent() {}

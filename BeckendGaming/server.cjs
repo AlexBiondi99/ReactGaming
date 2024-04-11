@@ -1,7 +1,46 @@
 const express = require('express')
 const { Pool } = require('pg');
+const cors = require('cors')
+const stripe = require("stripe")('sk_test_51P2HLiRoi57u1ESVBt3EgiIe2q82ajxrTtqmsRX8WdPOz9tCpzHYK4NURXxRZXsY8eYqE12jT06ZBjXm1PYsRjqh00d3ll2HK0')
 
 const app = express();
+app.use(express.json())
+
+//_________ stripe___________
+app.use(cors({origin: '*'}))
+app.post('/api/create-checkout-session', async (req, res) => {
+  console.log('Body della richiesta:', req.body)
+  if(!req.body || !req.body.cartItems) {
+    return res.status(400).json({ error: 'Dati mancanti nel corpo della richiesta' })
+  }
+  const { cartItems, totalPrice } = req.body;
+  console.log('status',cartItems)
+  try {
+    
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: cartItems.map(item => ({
+        price_data: {
+          currency: 'eur', 
+          product_data: {
+            name: item.title,
+          },
+          unit_amount: item.price * 100, 
+        },
+        quantity: item.quantity,
+      })),
+      mode: 'payment',
+      success_url: 'https://example.com/success', 
+      cancel_url: 'https://example.com/cancel', 
+    });
+    res.json({ id: session.id });
+    console.log('ID della sessione:', session.id);
+  } catch (error) {
+    console.error('Errore durante la creazione della sessione di checkout:', error);
+    res.status(500).json({ error: 'Errore durante la creazione della sessione di checkout' });
+  }
+});
+//___________________________
 
 const pool = new Pool({
   user: 'postgres',
@@ -28,9 +67,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.listen(3000, () => {
-    console.log("Server in ascolto sulla porta 3000");
-})
+
 
 app.get('/', (req, res) => {
     res.send('Benvenuto su ReactGaming Server!');
@@ -100,6 +137,7 @@ app.get('/api/games/:id', async (req, res) => {
     }
   });
 
+
   app.get('/api/profile', async (req, res) => {
     try {
       const {email} = req.query;
@@ -112,3 +150,4 @@ app.get('/api/games/:id', async (req, res) => {
     }
   })
   
+
