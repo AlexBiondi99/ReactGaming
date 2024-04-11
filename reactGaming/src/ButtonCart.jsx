@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import {ToastContainer, toast} from 'react-toastify'
 
 export function ButtonCart({ gameData }) {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -23,8 +23,13 @@ export function ButtonCart({ gameData }) {
       cart[existingItemIndex].quantity += 1;
     } else {
       cart.push({ ...gameData, quantity: 1 });
+      // toast.success("Gioco aggiunto correttamente ai favoriti",{
+      //   position: 'top-center',
+      // })
+      alert('gioco aggiunto al carello correttamente');
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+
   }
   return (
     <>

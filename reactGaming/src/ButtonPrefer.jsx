@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {ToastContainer, toast} from 'react-toastify'
 
 export function ButtonPrefer({ gameData }) {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -26,6 +27,11 @@ export function ButtonPrefer({ gameData }) {
       favorites.push({ ...gameData, quantity: 1 });
     }
     localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    // toast.success("Gioco aggiunto correttamente ai favoriti",{
+    //   position: 'top-center',
+    // })
+    alert('gioco aggiunto ai favoriti');
   }
   return (
     <button className="addToPrefer" onClick={addToFavorites}>
