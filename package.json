@@ -3,6 +3,7 @@
     "@stripe/stripe-js": "^3.2.0",
     "cors": "^2.8.5",
     "pg": "^8.11.5",
+    "react-toastify": "^10.0.5",
     "stripe": "^14.24.0"
   }
 }
